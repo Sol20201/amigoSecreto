@@ -27,3 +27,79 @@ Pasos iniciales:
  -->Un buen README incluye información sobre la instalación, dependencias, cómo ejecutar el proyecto, y posibles problemas o soluciones.
  
 *Se descarga base HTML y CSS y se aperturan en VS.
+
+
+Pasos del código js:
+
+Explicación línea por línea:
+Obtener el valor del input:
+
+js
+Copiar
+Editar
+let input = document.getElementById('amigo');
+let texto = input.value.trim();
+Se obtiene el campo de texto donde el usuario escribe (input).
+Se extrae su valor (value) y se eliminan espacios en blanco al inicio y al final con trim().
+Validar que el input no esté vacío:
+
+js
+Copiar
+Editar
+if (texto !== "") {
+Se verifica si el usuario escribió algo. Si el campo está vacío, se muestra una alerta y no se agrega nada.
+Obtener la lista donde se agregarán los nombres:
+
+js
+Copiar
+Editar
+let lista = document.getElementById('listaAmigos');
+Se selecciona la lista <ul> donde se mostrarán los nombres.
+Crear un nuevo elemento de lista (li):
+
+js
+Copiar
+Editar
+let nuevoElemento = document.createElement('li');
+Se crea un nuevo elemento de tipo li para agregar a la lista.
+Asignar el texto ingresado al nuevo elemento:
+
+js
+Copiar
+Editar
+nuevoElemento.textContent = texto;
+Se coloca el texto del usuario dentro del nuevo elemento de lista.
+Agregar el nuevo elemento a la lista:
+
+js
+Copiar
+Editar
+lista.appendChild(nuevoElemento);
+Se añade el nuevo li dentro de la lista <ul>.
+Guardar el nombre en el array amigos:
+
+js
+Copiar
+Editar
+amigos.push(texto);
+Se agrega el nombre al array amigos para su posible uso posterior.
+Limpiar el input y devolverle el foco:
+
+js
+Copiar
+Editar
+input.value = "";
+input.focus();
+Se borra el contenido del input para que el usuario pueda escribir otro nombre.
+Se devuelve el foco al campo de texto para facilitar la escritura de más nombres.
+Mostrar alerta si el input está vacío:
+
+js
+Copiar
+Editar
+} else {
+    alert("Añade un nombre válido"); 
+}
+return;
+Si el usuario intentó agregar un nombre vacío, se muestra una alerta.
+return; finaliza la función.
