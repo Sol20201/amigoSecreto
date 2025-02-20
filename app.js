@@ -20,6 +20,21 @@ function añadirTexto() {
     
 }
 
+//4.Sorteo aleatorio: Al hacer clic en el botón "Sortear Amigo"
+
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("No hay nombres en la lista.");
+        return;
+    }
+
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let nombreSeleccionado = amigos[indiceAleatorio];
+
+    document.getElementById('resultado').textContent = "Nombre seleccionado: " + nombreSeleccionado;
+    
+}
+
 
 
 
